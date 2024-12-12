@@ -1,0 +1,81 @@
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  /* === GLOBAL STYLE START === */
+
+  .section-container {
+    height: auto;
+  }
+
+  /* === GLOBAL STYLE END === */
+
+  /* === HERO SECTION START ===*/
+  #hero {
+    flex-direction: column-reverse;
+  }
+
+  #hero section.left-hero .command-line-box .command-line {
+    font-size: 12px;
+  }
+
+  #hero section.right-hero {
+    align-items: center;
+  }
+
+  #hero section.right-hero {
+    margin-top: 80px;
+    padding: 0 40px;
+    text-align: center;
+  }
+
+  #hero section.right-hero h1 {
+    font-size: 50px;
+  }
+
+  #hero section.right-hero p {
+    font-size: 24px;
+  }
+
+  #hero section.right-hero .action-button {
+    margin-bottom: 20px;
+  }
+
+  /* === HERO SECTION END ===*/
+
+  /* === ABOUT SECTION START ==*/
+
+  .about-contents {
+    margin-top: 4px;
+  }
+
+  .about-contents .main-content .head h2 {
+    font-size: 16px;
+  }
+
+  .about-contents .main-content .head p {
+    font-size: 18px;
+  }
+
+  .about-contents .main-content .content-list .content-text {
+    margin-right: 10px;
+    font-size: 12px;
+  }
+
+  /* === ABOUT SECTION END ==*/
+
+  /* === CONTACT SECTION START ==*/
+  #form_contact .content-contact .contact-info {
+    background-size: 100px;
+  }
+
+  #form_contact .content-contact .contact-info ol {
+    font-size: 14px;
+  }
+
+  #form_contact .content-contact .contact-form .form-group .form-control {
+    width: 100%;
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  /* === CONTACT SECTION END ==*/
+}

@@ -1,0 +1,644 @@
+/* VARIABLE */
+:root {
+  --nav-height: 60px;
+  --theme-font: 'Roboto Condensed',
+    sans-serif;
+  --theme-color-primary: rgb(17 20 62);
+  --theme-color-secondary: rgb(45, 49, 250);
+  --theme-color-tertiary: rgb(93, 139, 244);
+  --theme-color-quaternary: rgb(223, 246, 255);
+  --theme-color-quinary: rgb(227 227 227);
+}
+
+/* === GLOBAL STYLE START === */
+html {
+  scroll-behavior: smooth;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--theme-font);
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ol li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navigation-container,
+.section-container {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.section-container {
+  padding-top: var(--nav-height);
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg-circle {
+  position: absolute;
+  filter: blur(100px);
+  opacity: 0.7;
+}
+
+.bg-circle.one {
+  top: 20%;
+  left: 20%;
+  width: 200px;
+  height: 200px;
+  background-color: var(--theme-color-tertiary);
+  z-index: -1;
+}
+
+.bg-circle.two {
+  bottom: 10%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background-color: var(--theme-color-tertiary);
+  z-index: -1;
+}
+
+/* === GLOBAL STYLE END === */
+
+/* === ANIMATION STYLE START === */
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: white;
+  }
+}
+
+.fade-out-right {
+  transform: translate(160px, 0);
+  opacity: 0 !important;
+}
+
+/* === ANIMATION STYLE END === */
+
+/* === ALL ANIMATION CONTENT START === */
+#hero section.right-hero h1,
+#hero section.right-hero p,
+#hero section.right-hero .action-button,
+#form_contact .content-contact .contact-info,
+#form_contact .content-contact .contact-form {
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+/* === ALL ANIMATION CONTENT END === */
+
+
+/*
+  === HEADER / TOP NAV START ===
+  fixed size: 60px
+  because this element is fixed 
+  make sure all element (.section-container) have equal margin top with this element
+*/
+header {
+  height: calc(var(--nav-height) - 1px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: var(--theme-color-primary);
+  border-bottom: 1px dashed var(--theme-color-primary);
+  z-index: 100;
+}
+
+.navigation-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(227 227 227 / 50%);
+}
+
+.navigation-container .left-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-container .left-navigation .title {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.navigation-container .left-navigation .title h1,
+.navigation-container .left-navigation .title h2 {
+  margin: 0;
+}
+
+.navigation-container .left-navigation h1 {
+  font-size: 20px;
+}
+
+.navigation-container .left-navigation h2 {
+  font-size: 14px;
+}
+
+.navigation-container .left-navigation img {
+  height: 50px;
+  padding: 5px 0;
+}
+
+.menu-mobile-navigation {
+  display: none;
+}
+
+.navigation-container .right-navigation {
+  height: 100%;
+}
+
+.navigation-container .right-navigation ol {
+  height: inherit;
+  display: flex;
+  gap: 0 40px;
+}
+
+.navigation-container .right-navigation ol li {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navigation-container .right-navigation ol li:hover {
+  box-sizing: border-box;
+  border-bottom: 3px solid var(--theme-color-primary);
+}
+
+.navigation-container .right-navigation ol li a {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+
+/* === HEADER / TOP NAV END === */
+
+/* === HERO SECTION START ===*/
+#hero {
+  background-image: url("../image/golang_a02_lightgray.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  display: flex;
+}
+
+#hero section {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 160px;
+}
+
+#hero section .terminal {
+  width: 80%;
+  height: 50%;
+}
+
+#hero section.left-hero {
+  transition: all 0.2s linear;
+}
+
+#hero section.left-hero .command-control {
+  display: flex;
+  justify-content: space-between;
+  background-color: #161718;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px 4px 0 0;
+}
+
+.command-control-action {
+  display: flex;
+}
+
+.command-control-action div {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+#hero section.left-hero .command-line-box {
+  height: calc(100% - 27px);
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 0 0 4px 4px;
+  background-color: black;
+}
+
+#hero section.left-hero .command-line-box .command-line {
+  display: inline-flex;
+  padding: 20px 10px;
+  font-weight: bold;
+  color: white;
+}
+
+#hero section.left-hero .command-line-box .command-line p {
+  margin: 0 0 auto 0;
+}
+
+#hero section.left-hero .command-line-box .command-line p:nth-child(1) {
+  padding-right: 8px;
+  color: orange
+}
+
+#hero section.left-hero .command-line-box .command-input {
+  overflow: hidden;
+  border-right: 0.35em solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .1em;
+  animation: typing 4.5s steps(40, end), blink-caret .75s step-end infinite;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+
+#hero section.left-hero .command-line-box .command-input span {
+  color: gray;
+}
+
+#hero section.right-hero {
+  padding-left: 40px;
+  color: var(--theme-color-primary);
+  align-items: flex-start;
+}
+
+#hero section.right-hero h1 {
+  font-size: 76px;
+  margin-bottom: 0;
+}
+
+#hero section.right-hero p {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#hero section.right-hero .action-button {
+  color: var(--theme-color-);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px dashed var(--theme-color-primary);
+  background-color: var(--theme-color-quaternary);
+  margin-bottom: 70px;
+}
+
+#hero section.right-hero .action-button:hover {
+  color: var(--theme-color-quaternary);
+  background-color: var(--theme-color-primary);
+}
+
+/* === HERO SECTION END ===*/
+
+/* === INDUSTRIES SECTION START ===*/
+#industries {
+  color: var(--theme-color-primary);
+  background-color: rgb(223 246 255 / 50%);
+  position: relative;
+  box-sizing: border-box;
+  border-top: 1px solid var(--theme-color-quinary);
+  border-bottom: 1px solid var(--theme-color-quinary);
+}
+
+#industries h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#industries>p {
+  text-align: center;
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.industry-list {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 10;
+}
+
+.button-slide-left,
+.button-slide-right {
+  border: 2px dashed var(--theme-color-primary);
+  height: 40px;
+  margin: 4px;
+  border-radius: 99%;
+  flex: 0 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--theme-color-quaternary);
+  cursor: pointer;
+}
+
+.button-slide-left:hover,
+.button-slide-right:hover {
+  color: var(--theme-color-quaternary);
+  background-color: var(--theme-color-primary);
+}
+
+.button-slide-left:hover svg,
+.button-slide-right:hover svg {
+  fill: var(--theme-color-quaternary);
+}
+
+.industry-list ol {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.industry-list ol li {
+  margin: 8px;
+  padding: 8px;
+  background: rgb(255 255 255 / 30%);
+  border: 2px solid rgb(59 134 255 / 10%);
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px 0px rgb(176 203 212 / 20%);
+}
+
+.industry-list ol li h4 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.industry-list ol li p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+/* === INDUSTRIES SECTION END ===*/
+
+/* === CLIENT SECTION START ===*/
+#client {
+  color: var(--theme-color-primary);
+  background-image: url("../image/golang_a02_lightgray.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+}
+
+#client h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#client>p {
+  text-align: center;
+  margin-top: 0;
+  font-size: 24px;
+}
+
+#client>ol {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+#client>ol li {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#client>ol li svg {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* === CLIENT SECTION START ===*/
+
+/* === ABOUT SECTION START ==*/
+#about {
+  box-sizing: border-box;
+  border-top: 1px solid var(--theme-color-quinary);
+  border-bottom: 1px solid var(--theme-color-quinary);
+  background-color: rgb(223 246 255 / 50%);
+  position: relative;
+  color: var(--theme-color-primary);
+}
+
+#about h1 {
+  text-align: center;
+}
+
+.about-contents {
+  display: flex;
+  margin-top: 80px;
+  align-items: center;
+}
+
+.about-contents img {
+  opacity: 0.6;
+  width: 40%;
+}
+
+.about-contents .main-content .head h2 {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.about-contents .main-content .head p {
+  font-size: 28px;
+  margin-top: 0;
+  max-width: 60%;
+}
+
+.about-contents .main-content .content-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-contents .main-content .content-list .content-text {
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+/* === ABOUT SECTION END ==*/
+
+/* === CONTACT SECTION START ==*/
+#form_contact h1 {
+  display: flex;
+  flex-direction: column;
+}
+
+#form_contact>h1,
+#form_contact>p {
+  text-align: center;
+  color: var(--theme-color-primary);
+}
+
+#form_contact h1 {
+  margin-bottom: 0;
+}
+
+#form_contact>p {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+#form_contact .content-contact {
+  margin-top: 2em;
+  display: flex;
+}
+
+#form_contact .content-contact .contact-info,
+#form_contact .content-contact .contact-form {
+  width: 50%;
+  color: var(--theme-color-primary);
+}
+
+#form_contact .content-contact .contact-info {
+  padding: 0 40px;
+  background-image: url("../image/undraw_my_location_re_r52x.svg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: 10% bottom;
+}
+
+#form_contact .content-contact .contact-info ol {
+  font-size: 20px;
+}
+
+#form_contact .content-contact .contact-info ol li {
+  padding: 8px 0;
+  width: 60%;
+}
+
+#form_contact .content-contact .contact-info ol li:nth-child(1) {
+  font-weight: bold;
+}
+
+#form_contact .content-contact .contact-form .form-group {
+  padding: 10px 0;
+}
+
+#form_contact .content-contact .contact-form .form-group .form-control {
+  width: 100%;
+  color: var(--theme-color-primary);
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 2px dashed var(--theme-color-primary);
+  font-family: var(--theme-font);
+  outline: none;
+  font-weight: bold;
+}
+
+#form_contact .content-contact .contact-form .form-group .form-control:focus {
+  border: 2px dashed var(--theme-color-tertiary);
+}
+
+#form_contact .content-contact .contact-form .form-group button.form-control {
+  border: 2px dashed var(--theme-color-primary);
+  background-color: var(--theme-color-quaternary);
+  color: var(--theme-color-primary);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#form_contact .content-contact .contact-form .form-group button.form-control:hover {
+  color: var(--theme-color-quaternary);
+  background-color: var(--theme-color-primary);
+}
+
+/* === CONTACT SECTION END ==*/
+
+/* === FOOTER SECTION START ==*/
+#footer {
+  height: auto;
+  color: var(--theme-color-primary);
+  box-sizing: border-box;
+  border-top: 1px solid var(--theme-color-quinary);
+}
+
+.footer-container {
+  padding: 25px 0;
+  background-color: rgb(227 227 227 / 50%);
+}
+
+.footer-container .content-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-container .company {
+  flex-basis: 500px;
+}
+
+.footer-container .company p {
+  line-height: 25px;
+}
+
+.footer-container .social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.company-info {
+  text-align: center;
+}
+
+/* === FOOTER SECTION END ==*/
